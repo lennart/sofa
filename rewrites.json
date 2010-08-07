@@ -12,6 +12,17 @@
     "to" : "script/*"
   },
   {
+    "from" : "post/new",
+    "to" : "_show/edit"
+  },
+  {
+    "from" : "post/:id",
+    "to" : "_list/post/post-page",
+    "query" : {
+      "startkey" : [":id"]
+    }
+  },
+  {
     "from" : "style/*",
     "to" : "style/*"
   },

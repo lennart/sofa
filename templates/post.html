@@ -25,10 +25,10 @@
   </body>
   {{>scripts}}
   <script type="text/javascript" charset="utf-8">
-  $.CouchApp(function(app) {
+  $.couch.app(function(app) {
     app.post_id = "{{post_id}}";
     $("#profile").evently($.extend(true, {}, app.ddoc.vendor.couchapp.evently.profile, app.ddoc.evently.profile), app);
     $.evently.connect($("#account"), $("#profile"), ["loggedIn", "loggedOut"]);
-  });
+    },{design : "sofa", db: "ocean"});
   </script>
 </html>
